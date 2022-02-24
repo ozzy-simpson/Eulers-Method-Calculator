@@ -30,8 +30,11 @@
 				var inputTwo = parseInt($("#inputTwo").val());
 				var stopWhile = false;
 				if (inputTwo > inputOne) {
-					showResult("Input one must be greater than input two");
-					stopWhile = true;
+					var temp1 = inputOne
+					inputOne = inputTwo
+					inputTwo = temp1
+					//showResult("Input one must be greater than input two");
+					//stopWhile = true;
 				}
 				var htmlResult = "";
 				var remainder = inputOne % inputTwo;
