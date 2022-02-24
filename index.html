@@ -28,41 +28,35 @@
 			function calculate() {
 				var inputOne = parseInt($("#inputOne").val());
 				var inputTwo = parseInt($("#inputTwo").val());
-				var stopWhile = false;
 				if (inputTwo > inputOne) {
 					var temp1 = inputOne
 					inputOne = inputTwo
 					inputTwo = temp1
-					//showResult("Input one must be greater than input two");
-					//stopWhile = true;
 				}
 				var htmlResult = "";
 				var remainder = inputOne % inputTwo;
 				var quotient = (inputOne - remainder) / inputTwo;
 				
-				if (stopWhile == false) {
-					while (1==1) {
-						
-						htmlResult += inputOne + "=" + quotient + "*" + inputTwo + "+" + remainder + "<br />";
-						
-						if (remainder==0) {
-							htmlResult += "GCD("+$("#inputOne").val()+","+$("#inputTwo").val()+"): "+inputTwo;
-							showResult(htmlResult);
-							break;
-						}
-						else {
-							inputOne = inputTwo;
-							inputTwo = remainder;
-							remainder = inputOne % inputTwo;
-							quotient = (inputOne - remainder) / inputTwo;
-							
-						}
+				while (1==1) {
+
+					htmlResult += inputOne + "=" + quotient + "*" + inputTwo + "+" + remainder + "<br />";
+
+					if (remainder==0) {
+						htmlResult += "GCD("+$("#inputOne").val()+","+$("#inputTwo").val()+"): "+inputTwo;
+						showResult(htmlResult);
+						break;
+					}
+					else {
+						inputOne = inputTwo;
+						inputTwo = remainder;
+						remainder = inputOne % inputTwo;
+						quotient = (inputOne - remainder) / inputTwo;
+
 					}
 				}
 			}
 			function showResult(result) {
 				$("#result").html(result);
-				//$("form").html('<a href="">Start Over</a>');
 			}
 		</script>
 	</body>
